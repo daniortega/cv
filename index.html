@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículum de Daniel Ortega Martínez, Senior Drupal Developer, PHP Backend y Technical Lead.">
+  <title>Daniel Ortega Martínez | CV Digital</title>
+  <link rel="icon" type="image/jpeg" href="1781869758638.jpg">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --panel: rgba(15, 23, 42, 0.8);
+      --panel-light: #f8fafc;
+      --card: #ffffff;
+      --text: #e2e8f0;
+      --text-dark: #0f172a;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-strong: #2563eb;
+      --accent: #22c55e;
+      --line: rgba(148, 163, 184, 0.2);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+      --radius: 22px;
+      --container: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 30%),
+        linear-gradient(135deg, #020817 0%, #0f172a 30%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--container), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(14px);
+      background: rgba(2, 8, 23, 0.6);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+    }
+
+    .brand-mark svg {
+      width: 31px;
+      height: 31px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.25s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--text);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.14);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.25);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: white;
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+    }
+
+    .accent {
+      color: var(--primary);
+    }
+
+    .lead {
+      max-width: 60ch;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .meta-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .meta-row span::before {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+    }
+
+    .profile-card {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+    }
+
+    .avatar-wrap {
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.32);
+      border: 6px solid rgba(255,255,255,0.18);
+      background: linear-gradient(135deg, #0ea5e9, #1d4ed8, #7c3aed);
+    }
+
+    .profile-details {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(148, 163, 184, 0.05);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .detail-item strong {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    main {
+      padding: 1rem 0 4rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+    }
+
+    .panel {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      margin: 0 0 1.4rem;
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+
+    .summary {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.4rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.38rem;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), rgba(37, 99, 235, 0.15));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -0.85rem;
+      top: 0.6rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid rgba(15, 23, 42, 0.9);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-title {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .timeline-company {
+      margin: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .timeline p {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-group {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(148, 163, 184, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .skill-group h3 {
+      margin: 0 0 0.8rem;
+      font-size: 1rem;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 0.48rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      background: rgba(148, 163, 184, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .mini-item strong {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(148, 163, 184, 0.04);
+      color: var(--text);
+    }
+
+    .contact-list strong {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 1.5rem 0 3rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .scroll-up {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(18px) scale(0.9);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      z-index: 50;
+    }
+
+    .scroll-up.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .scroll-up:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .panel {
+        padding: 1.2rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions,
+      .meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        letter-spacing: -0.04em;
+      }
+    }
+    :root {
+      color-scheme: light;
+      --bg: #f3f6f8;
+      --bg-soft: #eaf0f4;
+      --panel: #ffffff;
+      --panel-light: #f8fafc;
+      --card: #ffffff;
+      --text: #172b3d;
+      --text-dark: #102235;
+      --muted: #506477;
+      --primary: #087eaa;
+      --primary-strong: #075985;
+      --accent: #16804a;
+      --line: rgba(23, 43, 61, 0.14);
+      --shadow: 0 12px 32px rgba(23, 43, 61, 0.07);
+      --radius: 16px;
+      --container: 1160px;
+    }
+
+    html { scroll-padding-top: 6rem; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { color: var(--primary-strong); }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #f59e0b;
+      outline-offset: 3px;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner { min-height: 68px; }
+
+    .brand {
+      color: var(--text-dark);
+      letter-spacing: 0;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      background: var(--text-dark);
+      border-radius: 10px;
+      box-shadow: none;
+      font-size: 0.9rem;
+      letter-spacing: -0.04em;
+    }
+
+    .nav { gap: 0.25rem; }
+
+    .nav a {
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      color: #455b6e;
+      font-size: 0.9rem;
+    }
+
+    .nav a:hover, .nav a.active {
+      background: #edf5f8;
+      color: var(--primary-strong);
+    }
+
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      background: linear-gradient(135deg, #eaf3f7 0%, #f8fafb 72%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+      gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      color: var(--primary-strong);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+    }
+
+    h1 {
+      margin-bottom: 0.65rem;
+      color: var(--text-dark);
+      font-size: clamp(2.35rem, 5vw, 3.8rem);
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .lead {
+      max-width: 66ch;
+      margin-bottom: 1.4rem;
+      color: #40586c;
+      font-size: 1.08rem;
+    }
+
+    .actions { gap: 0.75rem; margin-bottom: 1.4rem; }
+
+    .button {
+      min-height: 46px;
+      padding: 0.65rem 1.1rem;
+      border: 1px solid #bdcbd5;
+      border-radius: 9px;
+      color: var(--text-dark);
+      background: white;
+      font-size: 0.94rem;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      color: var(--text-dark);
+      background: #f2f7f9;
+      box-shadow: 0 5px 14px rgba(23, 43, 61, 0.1);
+    }
+
+    .button.primary {
+      border-color: var(--primary-strong);
+      background: var(--primary-strong);
+      color: white;
+    }
+
+    .button.primary:hover { background: #064766; }
+
+    .meta-row {
+      gap: 0.65rem 1.25rem;
+      color: #40586c;
+      font-size: 0.9rem;
+    }
+
+    .meta-row span::before {
+      width: 0.45rem;
+      height: 0.45rem;
+      background: var(--accent);
+      box-shadow: none;
+    }
+
+    .profile-card {
+      align-self: center;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar { 
+      width: 148px;
+      height: 148px;
+      border: 4px solid #e8f0f4;
+      box-shadow: none;
+      background: #e8f0f4;
+    }
+
+    .profile-details { gap: 0.55rem; }
+
+    .detail-item {
+      padding: 0.7rem 0.8rem;
+      border-color: #e4ebf0;
+      border-radius: 9px;
+      background: #f8fafb;
+      font-size: 0.9rem;
+    }
+
+    .detail-item strong, .contact-list strong { color: #40586c; }
+    .detail-item a { overflow-wrap: anywhere; }
+
+    main { padding: 2rem 0 3.5rem; }
+
+    .content-grid {
+      grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.8fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .panel {
+      margin-bottom: 1.5rem;
+      padding: clamp(1.25rem, 2.5vw, 1.8rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 5px 18px rgba(23, 43, 61, 0.035);
+      scroll-margin-top: 6rem;
+    }
+
+    .section-title {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #e7edf1;
+      color: var(--text-dark);
+      font-size: 1.35rem;
+      letter-spacing: -0.025em;
+    }
+
+    .summary { color: #40586c; }
+
+    .timeline { gap: 1.3rem; }
+
+    .timeline::before {
+      background: #d8e5ec;
+    }
+
+    .timeline-item::before {
+      background: var(--primary);
+      border-color: white;
+      box-shadow: 0 0 0 3px #e5f1f5;
+    }
+
+    .timeline-title { color: var(--text-dark); }
+
+    .tag {
+      padding: 0.25rem 0.6rem;
+      border-color: #d6e8ef;
+      border-radius: 6px;
+      background: #eff7fa;
+      color: #075985;
+      font-size: 0.72rem;
+      letter-spacing: 0.015em;
+    }
+
+    .timeline-company { color: var(--primary-strong); }
+    .timeline p { color: #40586c; }
+
+    .skill-group {
+      padding: 0.9rem;
+      border-color: #e3ebf0;
+      border-radius: 12px;
+      background: #fbfcfd;
+    }
+
+    .skill-group h3 { color: var(--text-dark); }
+
+    .badge {
+      padding: 0.38rem 0.58rem;
+      border-color: #dfe8ed;
+      border-radius: 6px;
+      background: #f1f5f7;
+      color: #344b5f;
+      font-size: 0.78rem;
+    }
+
+    .mini-item, .contact-list a, .contact-list > span {
+      padding: 0.7rem 0.8rem;
+      border-color: #e3ebf0;
+      border-radius: 9px;
+      background: #fbfcfd;
+    }
+
+    .mini-item strong { color: var(--text-dark); }
+    .mini-item span { color: #506477; }
+
+    .contact-list a:hover {
+      border-color: #b7d4e1;
+      background: #f2f8fa;
+    }
+
+    footer {
+      padding: 1.4rem 0 2.5rem;
+      border-top: 1px solid var(--line);
+      color: #506477;
+      font-size: 0.88rem;
+    }
+
+    .scroll-up {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--text-dark);
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .content-grid { grid-template-columns: 1fr; }
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.65rem 0;
+      }
+      .nav { width: 100%; justify-content: flex-start; }
+      .profile-card { display: grid; grid-template-columns: 150px 1fr; align-items: center; gap: 1rem; }
+      .avatar-wrap { margin: 0; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 2.5rem 0 1.8rem; }
+      .nav { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.2rem; }
+      .nav a { white-space: nowrap; }
+      .profile-card { grid-template-columns: 1fr; }
+      .avatar-wrap { margin-bottom: 0.25rem; }
+      .panel { padding: 1.15rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .actions { flex-direction: row; }
+      .meta-row { flex-direction: row; }
+      .contact-list a, .contact-list > span { align-items: flex-start; flex-direction: column; gap: 0.15rem; }
+      h1 { letter-spacing: -0.04em; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span>Daniel Ortega Martínez</span>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#formacion">Formación</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Senior Backend Developer · Drupal &amp; PHP</div>
+        <h1>Daniel Ortega Martínez</h1>
+        <p class="lead">
+          Desarrollador senior Drupal y Technical Lead con más de 10 años de experiencia en desarrollo web, análisis técnico y coordinación de equipos. Especializado en arquitectura escalable, backend PHP, migraciones Drupal e integraciones REST/SOAP, con orientación a negocio y metodologías ágiles.
+        </p>
+
+        <div class="actions">
+          <a class="button primary" href="Cv_2026.pdf" target="_blank" rel="noopener noreferrer">Ver CV</a>
+          <a class="button" href="Cv_2026.pdf" download>Descargar PDF</a>
+        </div>
+
+        <div class="meta-row">
+          <span>Sevilla</span>
+          <span>+34 605 570 969</span>
+          <span>Senior Drupal Developer</span>
+        </div>
+      </div>
+
+      <aside class="profile-card" id="perfil">
+        <div class="avatar-wrap">
+          <img
+            class="avatar"
+            src="1781869758638.jpg"
+            alt="Foto de perfil de Daniel Ortega Martínez"
+          >
+        </div>
+
+        <div class="profile-details">
+          <div class="detail-item">
+            <strong>Ubicación</strong>
+            <span>Sevilla</span>
+          </div>
+          <div class="detail-item">
+            <strong>Email</strong>
+            <a href="mailto:dani.ortega.84@gmail.com">dani.ortega.84@gmail.com</a>
+          </div>
+          <div class="detail-item">
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/dortega84" target="_blank" rel="noopener noreferrer">/in/dortega84</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <div class="container content-grid">
+      <div>
+        <section class="panel" id="experiencia">
+          <h2 class="section-title">Experiencia profesional</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Desarrollador Backend Drupal</h3>
+                <span class="tag">Oct. 2025 - Mar. 2026</span>
+              </div>
+              <p class="timeline-company">BaseTIS · Barcelona (Remoto)</p>
+              <p>
+                Desarrollo de nuevas funcionalidades y mejoras evolutivas en aplicaciones Drupal 10. Mantenimiento correctivo y preventivo, análisis, diagnóstico y resolución de incidencias, en colaboración con equipos multidisciplinares para asegurar soluciones estables y de calidad.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Analista / Desarrollador Backend Drupal</h3>
+                <span class="tag">Abr. 2025 - Oct. 2025</span>
+              </div>
+              <p class="timeline-company">Putput · Barcelona (Remoto)</p>
+              <p>
+                Análisis de requisitos de negocio y su transformación en soluciones técnicas. Desarrollo evolutivo y mantenimiento de aplicaciones Drupal 10, coordinándome con perfiles técnicos y funcionales para impulsar la mejora continua.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Desarrollador Backend Drupal</h3>
+                <span class="tag">Nov. 2024 - Abr. 2025</span>
+              </div>
+              <p class="timeline-company">Accenture · Sevilla</p>
+              <p>
+                Desarrollo de funcionalidades y evolutivos en Drupal 10. Mantenimiento correctivo y preventivo de aplicaciones empresariales, resolución de incidencias y colaboración con equipos técnicos.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Desarrollador Backend Drupal</h3>
+                <span class="tag">Abr. 2024 - Ago. 2024</span>
+              </div>
+              <p class="timeline-company">Seidor · Sevilla</p>
+              <p>
+                Desarrollo de plugins personalizados para Drupal; mejora de la navegación por migas de pan y gestión de alias de URL. Migración de datos y contenidos de Drupal 7 a Drupal 10, auditorías técnicas y modernización de plataformas legacy.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Desarrollador Backend Drupal</h3>
+                <span class="tag">Dic. 2017 - Feb. 2024</span>
+              </div>
+              <p class="timeline-company">Emergya · Sevilla</p>
+              <p>
+                Desarrollo de módulos personalizados, site building y configuración de contenidos y funcionalidades. Liderazgo en actualizaciones y modernización de proyectos Drupal 7 y 8 a Drupal 10; integración de servicios web y desarrollo de APIs REST propias, gestión de flujos de trabajo con GitHub, control de versiones y despliegues.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Desarrollador Drupal</h3>
+                <span class="tag">Jun. 2015 - Sep. 2017</span>
+              </div>
+              <p class="timeline-company">eXperience IT · Sevilla</p>
+              <p>
+                Diseño y desarrollo de módulos y funcionalidades personalizadas para Drupal 6 y 7, alineadas con los requisitos de negocio y del cliente. Construcción y mantenimiento de sitios desde cero, incluyendo arquitectura, estructuras de contenido, roles, permisos y configuración; mantenimiento, optimización del rendimiento, integraciones con terceros y personalización de themes.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Full Stack Developer</h3>
+                <span class="tag">Ene. 2008 - Oct. 2012</span>
+              </div>
+              <p class="timeline-company">Comunicaweb · Sevilla</p>
+              <p>
+                Desarrollo y mantenimiento de interfaces web responsive con HTML, CSS, JavaScript y PHP. Traducción de diseños UI/UX y requisitos de negocio a componentes reutilizables y layouts personalizados, e implementación de funcionalidades interactivas e integraciones de contenido dinámico en colaboración con diseñadores, desarrolladores y stakeholders.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="proyectos">
+          <h2 class="section-title">Proyectos destacados</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <h3 class="timeline-title">AEPD · Renovación tecnológica y migración a Drupal</h3>
+              <p>Participación en la renovación tecnológica y migración a Drupal del portal de la Agencia Española de Protección de Datos.</p>
+            </article>
+            <article class="timeline-item">
+              <h3 class="timeline-title">TUSSAM · Nuevo portal web</h3>
+              <p>Participación en el desarrollo del nuevo portal web de TUSSAM, dentro de un proyecto de transformación y evolución de su plataforma digital.</p>
+            </article>
+            <article class="timeline-item">
+              <h3 class="timeline-title">Grupo Planeta · Portales universitarios</h3>
+              <p>Coordinación y mantenimiento de los portales web de las universidades del Grupo Planeta, trabajando en su evolución y continuidad operativa.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="formacion">
+          <h2 class="section-title">Formación y certificaciones</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Técnico Superior en Administración de Sistemas Informáticos</h3>
+                <span class="tag">2006 - 2008</span>
+              </div>
+              <p class="timeline-company">IES Ciudad Jardín · Sevilla</p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Scrum: Fundamentos y Buenas Prácticas</h3>
+                <span class="tag">Feb. 2020</span>
+              </div>
+              <p class="timeline-company">OpenWebinars</p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3 class="timeline-title">Experto en Desarrollo Back-End con Drupal 8</h3>
+                <span class="tag">Feb. 2019</span>
+              </div>
+              <p class="timeline-company">Forcontu</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section class="panel" id="habilidades">
+          <h2 class="section-title">Tecnologías clave</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Drupal</h3>
+              <div class="badge-list">
+                <span class="badge">Drupal 6-10</span>
+                <span class="badge">Módulos custom</span>
+                <span class="badge">Form API</span>
+                <span class="badge">Entity API</span>
+                <span class="badge">Plugin API</span>
+                <span class="badge">Views</span>
+                <span class="badge">Site building</span>
+                <span class="badge">Twig</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3>Backend</h3>
+              <div class="badge-list">
+                <span class="badge">PHP</span>
+                <span class="badge">REST API</span>
+                <span class="badge">SOAP</span>
+                <span class="badge">Arquitectura backend</span>
+                <span class="badge">Lógica server-side</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3>Frontend</h3>
+              <div class="badge-list">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript vanilla</span>
+                <span class="badge">Interfaces responsive</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3>DevOps / tools</h3>
+              <div class="badge-list">
+                <span class="badge">Git</span>
+                <span class="badge">GitHub workflows</span>
+                <span class="badge">Docker</span>
+                <span class="badge">DDEV</span>
+                <span class="badge">Entornos locales</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h3>Metodologías</h3>
+              <div class="badge-list">
+                <span class="badge">Scrum</span>
+                <span class="badge">Agile</span>
+                <span class="badge">Trabajo con cliente</span>
+                <span class="badge">Coordinación técnica</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2 class="section-title">Idiomas y fortalezas</h2>
+          <div class="mini-list">
+            <div class="mini-item">
+              <div>
+                <strong>Español</strong>
+                <span>Nativo</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Inglés</strong>
+                <span>B1 (Intermedio)</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Fortalezas</strong>
+                <span>Pensamiento analítico y resolución de problemas</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Comunicación</strong>
+                <span>Con perfiles técnicos, no técnicos y stakeholders</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Adaptabilidad</strong>
+                <span>A proyectos, tecnologías y contextos cambiantes</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Calidad</strong>
+                <span>Atención al detalle y foco en código escalable y mantenible</span>
+              </div>
+            </div>
+            <div class="mini-item">
+              <div>
+                <strong>Competencias transversales</strong>
+                <span>Análisis técnico y orientación a negocio · Trabajo en equipo en entornos ágiles</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="contacto">
+          <h2 class="section-title">Contacto</h2>
+          <div class="contact-list">
+            <a href="mailto:dani.ortega.84@gmail.com"><strong>Email</strong><span>dani.ortega.84@gmail.com</span></a>
+            <a href="tel:+34605570969"><strong>Teléfono</strong><span>+34 605 570 969</span></a>
+            <a href="https://www.linkedin.com/in/dortega84" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>/in/dortega84</span></a>
+            <span><strong>Ciudad</strong><span>Sevilla</span></span>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Daniel Ortega Martínez. Todos los derechos reservados.</div>
+  </footer>
+
+  <button class="scroll-up" id="scrollUp" aria-label="Volver arriba">↑</button>
+
+  <script>
+    const year = document.getElementById('year');
+    year.textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('.nav a');
+    const sections = document.querySelectorAll('section[id]');
+    const scrollUpButton = document.getElementById('scrollUp');
+
+    const setActiveLink = () => {
+      let currentId = 'inicio';
+      const activationLine = 240;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= activationLine) {
+          currentId = section.id;
+        }
+      });
+
+      const isAtPageBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+      if (isAtPageBottom) {
+        currentId = navLinks[navLinks.length - 1].getAttribute('href').slice(1);
+      }
+
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === '#' + currentId;
+        link.classList.toggle('active', isActive);
+      });
+    };
+
+    const toggleScrollButton = () => {
+      if (window.scrollY > 300) {
+        scrollUpButton.classList.add('visible');
+      } else {
+        scrollUpButton.classList.remove('visible');
+      }
+    };
+
+    scrollUpButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      setActiveLink();
+      toggleScrollButton();
+    });
+    window.addEventListener('load', () => {
+      setActiveLink();
+      toggleScrollButton();
+    });
+  </script>
+</body>
+</html>
