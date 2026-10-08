@@ -1154,21 +1154,30 @@
     const sections = document.querySelectorAll('section[id]');
     const scrollUpButton = document.getElementById('scrollUp');
 
-    const setActiveLink = () => {
-      let currentId = 'inicio';
-      const activationLine = 240;
+    const setActiveLink = (forcedId = null) => {
+      let currentId = forcedId || 'inicio';
 
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= activationLine) {
-          currentId = section.id;
+      if (!forcedId) {
+        const activationLine = 240;
+        let closestDistance = Number.POSITIVE_INFINITY;
+
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+
+          if (rect.top <= activationLine && rect.bottom > 0) {
+            const distance = Math.abs(rect.top - activationLine);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              currentId = section.id;
+            }
+          }
+        });
+
+        const isAtPageBottom =
+          window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+        if (isAtPageBottom) {
+          currentId = navLinks[navLinks.length - 1].getAttribute('href').slice(1);
         }
-      });
-
-      const isAtPageBottom =
-        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
-      if (isAtPageBottom) {
-        currentId = navLinks[navLinks.length - 1].getAttribute('href').slice(1);
       }
 
       navLinks.forEach((link) => {
@@ -1176,6 +1185,13 @@
         link.classList.toggle('active', isActive);
       });
     };
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href').slice(1);
+        setActiveLink(targetId);
+      });
+    });
 
     const toggleScrollButton = () => {
       if (window.scrollY > 300) {
