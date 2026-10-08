@@ -1151,45 +1151,17 @@
     year.textContent = new Date().getFullYear();
 
     const navLinks = document.querySelectorAll('.nav a');
-    const sections = document.querySelectorAll('section[id]');
     const scrollUpButton = document.getElementById('scrollUp');
 
-    const setActiveLink = (forcedId = null) => {
-      let currentId = forcedId || 'inicio';
-
-      if (!forcedId) {
-        const activationLine = 240;
-        let closestDistance = Number.POSITIVE_INFINITY;
-
-        sections.forEach((section) => {
-          const rect = section.getBoundingClientRect();
-
-          if (rect.top <= activationLine && rect.bottom > 0) {
-            const distance = Math.abs(rect.top - activationLine);
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              currentId = section.id;
-            }
-          }
-        });
-
-        const isAtPageBottom =
-          window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
-        if (isAtPageBottom) {
-          currentId = navLinks[navLinks.length - 1].getAttribute('href').slice(1);
-        }
-      }
-
+    const setActiveLink = (selectedLink) => {
       navLinks.forEach((link) => {
-        const isActive = link.getAttribute('href') === '#' + currentId;
-        link.classList.toggle('active', isActive);
+        link.classList.toggle('active', link === selectedLink);
       });
     };
 
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        const targetId = link.getAttribute('href').slice(1);
-        setActiveLink(targetId);
+        setActiveLink(link);
       });
     });
 
@@ -1209,11 +1181,9 @@
     });
 
     window.addEventListener('scroll', () => {
-      setActiveLink();
       toggleScrollButton();
     });
     window.addEventListener('load', () => {
-      setActiveLink();
       toggleScrollButton();
     });
   </script>
